@@ -5,29 +5,35 @@
 
 This program will ask a visitor 5 Yes/No questions about Melissa
 
+Q1:Is Melissa from the Greater Seattle area?
+
 */
 
 //Create an array variable with possible answers
-var possibleAnswers = ['Yes', 'yes', 'Y', 'y', 'No', 'no', 'N', 'n'];
+var possibleAnswers = ['yes', 'y', 'no', 'n'];
 
-//Q1:Is Melissa from the Greater Seattle area?
-//Create a variable for viewer response
-var fromSeattle = prompt('Is Melissa from the Greater Seattle area?');
+//QUESTION 1: Is Melissa from Seattle?
+//Create a variable for visitor response
+var fromSeattleGuess = prompt('Is Melissa from the Greater Seattle area?');
 
 //Create & store correct answer
 var fromSeattleAnswer = 'No';
 console.log('From Seattle Answer: ' + fromSeattleAnswer);
 
-//Store & check response
-console.log('From Seattle Guess: ' + fromSeattle);
+//Store & edit response to lowercase
+console.log('From Seattle Guess: ' + fromSeattleGuess);
+var checkFromSeattleGuess = fromSeattleGuess.toLowerCase();
 
-if(fromSeattle === fromSeattleAnswer){
+//Compare response with correct answer
+if(checkFromSeattleGuess === possibleAnswers[2] || checkFromSeattleGuess === possibleAnswers[3]){
     alert('You\'re right! She grew up in Hawaii');
 } else{
-    alert('Nice guess. She actually left Hawaii for college and just stuck around.')
+    alert('Nice guess, she\'s actually from Hawaii but stuck around after college.');
 };
 
-//Q2:Does enjoy dim sum for breakfast on sundays?
+//QUESTION 2: Does enjoy dim sum for breakfast on sundays?
+//Create a variable for visitor response
+
 //Q3:Is Melissa's favorite dog the Old Enlish Sheepdog?
 //Q4:Is snowboarding Melissa's favorite winter sport?
 //Q5:
