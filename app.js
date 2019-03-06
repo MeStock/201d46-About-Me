@@ -1,4 +1,4 @@
-/* 'use strict';
+ 'use strict';
 
 
 /*
@@ -9,11 +9,10 @@ Q1:Is Melissa from the Greater Seattle area?
 Q2: Does Melissa enjoy dim sum for breakfast on sundays?
 Q3:Is Melissa's favorite dog the Old Enlish Sheepdog?
 Q4:Is snowboarding Melissa's favorite winter sport?
-Q5: 
+Q5: Can Melissa make at least 100 different cocktails from memory?
 
 */
 
-/*
 
 //Create an array variable with possible answers
 var possibleAnswers = ['yes', 'y', 'no', 'n'];
@@ -114,5 +113,3 @@ if(checkNumCocktailsGuess === possibleAnswers[0] || checkNumCocktailsGuess === p
 }else {
     alert('With years of bartending experience, she can make more than 100 from memory.');
 };
-
-*/
