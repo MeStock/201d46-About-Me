@@ -95,37 +95,20 @@ if(checkFavSportGuess === possibleAnswers[0] || checkFavSportGuess === possibleA
     alert('She tries to get up to the mountain for skiing a few times a month.');
 };
 
-//Q5:
+//Q5: Can Melissa make at least 100 different cocktails from memory?
+//Correct answer
+console.log('Make Lots of Cocktails: ' + possibleAnswers[0]);
 
+//Create variable for a visitor response
+var numCocktailsGuess = prompt('Can Melissa make at least 100 different cocktails from memory?');
+console.log('Make Lots of Cocktails Guess: ' + numCocktailsGuess);
+var checkNumCocktailsGuess = numCocktailsGuess.toLowerCase();
 
-
-
-
-
-
-
-/*
-
-var favColor = prompt('is Nicholas\'s favorite color red?');
-var favColorAnswer = 'no';
-
-if(favColor === favColorAnswer){
-    alert('nice guess');
+//Compare response with correct answer
+if(checkNumCocktailsGuess === possibleAnswers[0] || checkNumCocktailsGuess === possibleAnswers[1]){
+    alert('Fun fact: you bet she can!');
+}else if(checkNumCocktailsGuess === possibleAnswers[2] || checkNumCocktailsGuess === possibleAnswers[3]){
+    alert('She would be a terrible bartender if she couldn\'t.');
 }else {
-    alert('nope');
+    alert('With years of bartending experience, she can make more than 100 from memory.');
 };
-
-*/
-
-/*
-
-+++Basic Syntax for an If Statement+++
-if (some condition) {
-some code to be executed if condition is true    
-} <optional> else if{
-some code to be executed if condition is not true
-}//} <optional> else {
-some code to be executed if condition is not true
-}
-
-*/
