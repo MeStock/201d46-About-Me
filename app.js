@@ -1,4 +1,4 @@
-'use strict';
+/* 'use strict';
 
 
 /*
@@ -12,6 +12,8 @@ Q4:Is snowboarding Melissa's favorite winter sport?
 Q5: 
 
 */
+
+/*
 
 //Create an array variable with possible answers
 var possibleAnswers = ['yes', 'y', 'no', 'n'];
@@ -112,3 +114,5 @@ if(checkNumCocktailsGuess === possibleAnswers[0] || checkNumCocktailsGuess === p
 }else {
     alert('With years of bartending experience, she can make more than 100 from memory.');
 };
+
+*/

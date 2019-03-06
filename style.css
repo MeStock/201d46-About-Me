@@ -1,0 +1,23 @@
+h1 {
+    color: darkmagenta;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+div {
+    background-color: lightpink;
+}
+
+h2 {
+    color: palevioletred;
+}
+
+p {
+    color: darkmagenta;
+}
+
+h3{
+    color: palevioletred;
+}
