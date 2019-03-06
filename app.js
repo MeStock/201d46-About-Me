@@ -6,10 +6,17 @@
 This program will ask a visitor 5 Yes/No questions about Melissa
 
 Q1:Is Melissa from the Greater Seattle area?
-Q2: Does Melissa enjoy dim sum for breakfast on Sundays?
+Q2:Does Melissa enjoy dim sum for breakfast on Sundays?
 Q3:Is Melissa's favorite dog the Old Enlish Sheepdog?
 Q4:Is snowboarding Melissa's favorite winter sport?
-Q5: Can Melissa make at least 100 different cocktails from memory?
+Q5:Can Melissa make at least 100 different cocktails from memory?
+
+then play a guessing game with 2 questions about Melissa
+
+Q6:
+Q7:
+
+At the end the user will get a score of how well they know Melissa.
 
 */
 
@@ -17,10 +24,13 @@ Q5: Can Melissa make at least 100 different cocktails from memory?
 //Create an array variable with possible answers
 var possibleAnswers = ['yes', 'y', 'no', 'n'];
 
+//Create a variable to store number of correct guesses
+var numCorrectGuesses= 0;
+
 //Ask & store visitors name
 var userName = prompt('What is your name?');
 console.log('User name is: ' + userName);
-alert('Thanks ' + userName + '! Welcome to my page :)');
+alert('Thanks ' + userName + '! Welcome to my page. Here are some yes/no trivia questions about Melissa');
 
 //QUESTION 1: Is Melissa from Seattle?
 //Correct answer
@@ -36,6 +46,7 @@ var checkFromSeattleGuess = fromSeattleGuess.toLowerCase();
 //Compare response with correct answer
 if(checkFromSeattleGuess === possibleAnswers[2] || checkFromSeattleGuess === possibleAnswers[3]){
   alert('You\'re right! She grew up in Hawaii');
+  numCorrectGuesses++;
 } else if(checkFromSeattleGuess === possibleAnswers[0] || checkFromSeattleGuess === possibleAnswers[1]){
   alert('Nice guess, she\'s actually from Hawaii but stuck around after college.');
 }else {
@@ -54,15 +65,16 @@ var checkDimSumGuess = dimSumGuess.toLowerCase();
 //Compare response with correct answer
 if(checkDimSumGuess === possibleAnswers[0] || checkDimSumGuess === possibleAnswers[1]){
   alert('YUM! Who doesn\'t love dim sum?!');
+  numCorrectGuesses++;
 }else if(checkDimSumGuess === possibleAnswers[2] || checkDimSumGuess === possibleAnswers[3]){
   alert(userName + '....That would be INSANE.');
 }else {
   alert('She loves dim sum!');
 }
 
-//Q3:Is Melissa's favorite dog the Old Enlish Sheepdog?
+//QUESTION 3: Is Melissa's favorite dog the Old Enlish Sheepdog?
 //Correct answer
-console.log('Loves Old English Sheepdog: ' + possibleAnswers[0]);
+console.log('Loves Old English Sheepdog Answer: ' + possibleAnswers[0]);
 
 //Create a variable for a visitor response
 var favDogGuess = prompt('Is Melissa\'s favorite dog the Old English Sheepdog?');
@@ -72,15 +84,16 @@ var checkFavDogGuess = favDogGuess.toLowerCase();
 //Compare response with correct answer
 if(checkFavDogGuess === possibleAnswers[0] || checkFavDogGuess === possibleAnswers[1]){
   alert('You got it. Old English Sheepdogs are for snuggling.');
+  numCorrectGuesses++;
 }else if(checkFavDogGuess === possibleAnswers[2] || checkFavDogGuess === possibleAnswers[3]) {
   alert('But they\'re the fluffiest doggies, therefore the best doggies.');
 }else {
   alert('Old English Sheepdogs are the best!');
 }
 
-//Q4:Is snowboarding Melissa's favorite winter sport?
+//QUESTION 4: Is snowboarding Melissa's favorite winter sport?
 //Correct answer
-console.log('Favorite Winter Sport: ' + possibleAnswers[0]);
+console.log('Favorite Winter Sport Answer: ' + possibleAnswers[0]);
 
 //Create variable for a visitor response
 var favSportGuess = prompt('Is snowboarding Melissa\'s favorite winter sport?');
@@ -89,16 +102,17 @@ var checkFavSportGuess = favSportGuess.toLowerCase();
 
 //Compare response with correct answer
 if(checkFavSportGuess === possibleAnswers[0] || checkFavSportGuess === possibleAnswers[1]){
-  alert('Haha ' + userName + ' does it look like she can snowboard?');
+  alert('Haha ' + userName + ', does it look like she can snowboard?');
+  numCorrectGuesses++;
 }else if(checkFavSportGuess === possibleAnswers[2] || checkFavSportGuess === possibleAnswers[3]){
   alert('Of course! Skiing is clearly the superior sport.');
 }else {
   alert('She tries to get up to the mountain for skiing a few times a month.');
 }
 
-//Q5: Can Melissa make at least 100 different cocktails from memory?
+//QUESTION 5: Can Melissa make at least 100 different cocktails from memory?
 //Correct answer
-console.log('Make Lots of Cocktails: ' + possibleAnswers[0]);
+console.log('Make Lots of Cocktails Answer: ' + possibleAnswers[0]);
 
 //Create variable for a visitor response
 var numCocktailsGuess = prompt('Can Melissa make at least 100 different cocktails from memory?');
@@ -108,8 +122,47 @@ var checkNumCocktailsGuess = numCocktailsGuess.toLowerCase();
 //Compare response with correct answer
 if(checkNumCocktailsGuess === possibleAnswers[0] || checkNumCocktailsGuess === possibleAnswers[1]){
   alert('Fun fact: you bet she can!');
+  numCorrectGuesses++;
 }else if(checkNumCocktailsGuess === possibleAnswers[2] || checkNumCocktailsGuess === possibleAnswers[3]){
   alert('She would be a terrible bartender if she couldn\'t.');
 }else {
   alert('With years of bartending experience, she can make more than 100 from memory.');
 }
+
+//Prepare visitor for non y/n questions
+alert('Yes/No questions are too easy for you ' + userName + '. Lets try a guessing game instead :)');
+
+//QUESTION 6: How many years has Melissa lived in Seattle?
+//Correct Answer
+var numOfYears = '8';
+console.log('Number of years in Seattle Answer: ' + numOfYears);
+
+//Ask Question
+var numOfYearsGuess = prompt('How many years has Melissa lived in Seattle?');
+var numOfYearsAttempts = 1;
+console.log('Years in Seattle Guess: ' + numOfYearsGuess);
+
+//Compare response with correct answer
+while(numOfYearsAttempts < 4){
+  if(numOfYearsGuess === numOfYears){
+    alert('You got it in ' + numOfYearsAttempts + ' out of 4 tries, nice job!');
+    numCorrectGuesses++;
+    break;
+  }else if (numOfYearsGuess < 8){
+    alert(numOfYearsAttempts + ' out of 4 tries');
+    numOfYearsGuess = prompt('Too low, try again!');
+  }else {
+    alert(numOfYearsAttempts + ' out of 4 tries');
+    numOfYearsGuess = prompt('Too high, try again!');
+  }
+  numOfYearsAttempts++;
+}
+
+
+//Return results to visitor
+var percent = (numCorrectGuesses / 10) * 100;
+alert('Congrats ' + userName + '! You got ' + numCorrectGuesses + ' out of 10 questions right.' + ' That\'s ' + percent + '%!');
+
+
+
+
