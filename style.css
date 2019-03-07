@@ -22,6 +22,7 @@ h3{
     color: palevioletred;
 }
 
-ol.bigIslandHikes {
-    
+ol.favHawaiianHikes {
+    color: darkmagenta;
+    margin: 0px 10px 10px 10px;
 }
