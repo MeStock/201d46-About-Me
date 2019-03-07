@@ -13,8 +13,8 @@ Q5:Can Melissa make at least 100 different cocktails from memory?
 
 then play a guessing game with 2 questions about Melissa
 
-Q6:
-Q7:
+Q6: How many years has Melissa lived in Seattle?
+Q7: What languages does Melissa speak?
 
 At the end the user will get a score of how well they know Melissa.
 
