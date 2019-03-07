@@ -30,7 +30,7 @@ var numCorrectGuesses= 0;
 //Ask & store visitors name
 var userName = prompt('What is your name?');
 console.log('User name is: ' + userName);
-alert('Thanks ' + userName + '! Welcome to my page. Here are some yes/no trivia questions about Melissa');
+alert('Thanks ' + userName + '! Welcome to my page. Here are some yes/no trivia questions about myself.');
 
 //QUESTION 1: Is Melissa from Seattle?
 //Correct answer
@@ -53,6 +53,9 @@ if(checkFromSeattleGuess === possibleAnswers[2] || checkFromSeattleGuess === pos
   alert('She\'s from Hawaii, Alooooooohhhaaaa.');
 }
 
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/1');
+
 //QUESTION 2: Does Melissa enjoy dim sum for breakfast on Sundays?
 //Correct answer
 console.log('Eats Dim Sum Answer: ' + possibleAnswers[0]);
@@ -71,6 +74,9 @@ if(checkDimSumGuess === possibleAnswers[0] || checkDimSumGuess === possibleAnswe
 }else {
   alert('She loves dim sum!');
 }
+
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/2');
 
 //QUESTION 3: Is Melissa's favorite dog the Old Enlish Sheepdog?
 //Correct answer
@@ -91,6 +97,9 @@ if(checkFavDogGuess === possibleAnswers[0] || checkFavDogGuess === possibleAnswe
   alert('Old English Sheepdogs are the best!');
 }
 
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/3');
+
 //QUESTION 4: Is snowboarding Melissa's favorite winter sport?
 //Correct answer
 console.log('Favorite Winter Sport Answer: ' + possibleAnswers[0]);
@@ -109,6 +118,9 @@ if(checkFavSportGuess === possibleAnswers[0] || checkFavSportGuess === possibleA
 }else {
   alert('She tries to get up to the mountain for skiing a few times a month.');
 }
+
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/4');
 
 //QUESTION 5: Can Melissa make at least 100 different cocktails from memory?
 //Correct answer
@@ -129,6 +141,9 @@ if(checkNumCocktailsGuess === possibleAnswers[0] || checkNumCocktailsGuess === p
   alert('With years of bartending experience, she can make more than 100 from memory.');
 }
 
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/5');
+
 //Prepare visitor for non y/n questions
 alert('Yes/No questions are too easy for you ' + userName + '. Lets try a guessing game instead :)');
 
@@ -145,23 +160,69 @@ console.log('Years in Seattle Guess: ' + numOfYearsGuess);
 //Compare response with correct answer
 while(numOfYearsAttempts < 4){
   if(numOfYearsGuess === numOfYears){
-    alert('You got it in ' + numOfYearsAttempts + ' out of 4 tries, nice job!');
+    alert('You got it in ' + numOfYearsAttempts + ' out of 4 attempts, nice job!');
     numCorrectGuesses++;
     break;
   }else if (numOfYearsGuess < 8){
-    alert(numOfYearsAttempts + ' out of 4 tries');
+    alert(numOfYearsAttempts + ' out of 4 attempts');
     numOfYearsGuess = prompt('Too low, try again!');
-  }else {
-    alert(numOfYearsAttempts + ' out of 4 tries');
+  }else if(numOfYearsGuess > 8){
+    alert(numOfYearsAttempts + ' out of 4 attempts');
     numOfYearsGuess = prompt('Too high, try again!');
+  }else {
+    alert(numOfYearsAttempts + ' out of 4 attempts');
+    numOfYearsGuess = prompt('Thats not a valid guess. Try another number?');
   }
   numOfYearsAttempts++;
 }
 
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/6');
+
+//QUESTION 7: What languages does Melissa speak?
+//Correct Answer
+var langAnswer = ['english', 'vietnamese'];
+console.log('Melissa speaks: ' + langAnswer[0] + ' and ' + langAnswer[1]);
+
+//Ask Question
+var langGuess = prompt('What languages does Melissa speak?');
+langGuess = langGuess.toLowerCase();
+console.log('Language Guess: ' + langGuess);
+var numOfLangAttempts = 1;
+
+//Compare response with correct answer
+for(var i = 0; i < 5; i++) {
+  switch (langGuess) {
+  case 'english':
+    alert(numOfLangAttempts + ' out of 6 attempts');
+    langGuess = prompt('Melissa does speak english! Any other languages?');
+    numCorrectGuesses++;
+    break;
+  case 'vietnamese':
+    alert(numOfLangAttempts + ' out of 6 attempts');
+    langGuess = prompt('Melissa does speak vietnamese! Any other languages?');
+    numCorrectGuesses++;
+    break;
+  default:
+    alert(numOfLangAttempts + ' out of 6 attempts');
+    langGuess = prompt('Unfortunately not. Try again?');
+    break;
+  }
+  numOfLangAttempts++;
+  if(numCorrectGuesses === '8'){
+    break;
+  }
+  if(numOfLangAttempts === 6){
+    alert('Bummer! You are out of attempts. Melissa is bilingual in English and Vietnamese.');
+  }
+}
+
+//Print results so far
+console.log('Correct Answers: ' + numCorrectGuesses + '/8');
 
 //Return results to visitor
-var percent = (numCorrectGuesses / 10) * 100;
-alert('Congrats ' + userName + '! You got ' + numCorrectGuesses + ' out of 10 questions right.' + ' That\'s ' + percent + '%!');
+var percent = (numCorrectGuesses / 8) * 100;
+alert('Congrats ' + userName + '! You got ' + numCorrectGuesses + ' out of 8 possible points.' + ' That\'s ' + percent + '%!');
 
 
 
